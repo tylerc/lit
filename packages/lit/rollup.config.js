@@ -102,5 +102,17 @@ export default litProdConfig({
         );
       },
     },
+    {
+      file: 'index.more',
+      output: 'lit-more.min',
+      format: 'es',
+      sourcemapPathTransform: (relativeSourcePath, sourcemapPath) => {
+        // See the comment in the core bundle above.
+        return path.join(
+          'lit-more.min.js',
+          makeRelativeToPackagesDir(relativeSourcePath, sourcemapPath)
+        );
+      },
+    },
   ],
 });
